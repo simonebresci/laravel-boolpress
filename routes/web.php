@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// CRUD AUTHORS
+Route::resource('/authors', 'AuthorController');
+
+
+Route::get('/posts', 'PostController@index');
