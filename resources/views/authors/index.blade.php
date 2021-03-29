@@ -7,11 +7,12 @@
         <thead class="thead-dark">
           <tr>
             <th scope="col">Id</th>
+            <th scope="col">Avatar</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Phone</th>
             <th scope="col">Address</th>
-            <th scope="col">Avatar</th>
+
 
           </tr>
         </thead>

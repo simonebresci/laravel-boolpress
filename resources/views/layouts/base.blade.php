@@ -37,48 +37,6 @@
               </div>
             </nav>
 
-            <div class="user-logged">
-
-              @if (Route::has('login'))
-                  <div class="top-right links">
-                      @auth
-
-                          <i class="fa fa-user" aria-hidden="true"></i>
-                          {{Auth::user()->name}}
-                          <i class="fas fa-at"></i>
-                          {{Auth::user()->email}}
-
-
-                          <i class="fas fa-sign-out-alt"></i>
-                          <a href="{{ route('logout') }}"
-                             onclick="event.preventDefault();
-                                           document.getElementById('logout-form').submit();">
-                              {{ __('Logout') }}
-                          </a>
-
-                          {{-- <a class="dropdown-item" href="{{ route('logout') }}"
-                             onclick="event.preventDefault();
-                                           document.getElementById('logout-form').submit();">
-                              {{ __('Logout') }}
-                          </a> --}}
-
-                          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                              @csrf
-                          </form>
-
-                      @else
-                          <i class="fas fa-sign-in-alt"></i>
-                          <a href="{{ route('login') }}">Login</a>
-
-                          @if (Route::has('register'))
-                              <i class="fas fa-pen-nib"></i>
-                              <a href="{{ route('register') }}">Register</a>
-                          @endif
-                      @endauth
-                  </div>
-              @endif
-            </div>
-
             {{-- /BOOTSTRAP NAVBAR --}}
           </div>
           {{-- /Header Container --}}

@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use App\Author;
 use App\Authors_detail;
 use App\Post;
+use App\Comment;
 use Faker\Generator as Faker;
 class AuthorSeeder extends Seeder
 
@@ -38,6 +39,16 @@ class AuthorSeeder extends Seeder
           $post->body=  $faker->text(320);
           // Salva quanto creato dentro author
           //, utilizzando il metodo posts definito in Model
+
+          // // Create random comments
+          // for($z=0; $z<rand(2,5); $z++){
+          //   $comment = new Comment();
+          //   $comment->body = $faker->text(160);
+          //   $comment->likes = rand(0,100);
+          //   $post->comments()->save($comment);
+          //   $author->comments()->save($comment);
+          // }
+
           $author->posts()->save($post);
         }
       }
