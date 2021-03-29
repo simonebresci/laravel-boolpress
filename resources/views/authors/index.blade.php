@@ -2,6 +2,7 @@
 @section('title','Index Authors')
 
 @section('content')
+    <h1>Authors</h1>
       <table class="table">
         <thead class="thead-dark">
           <tr>
@@ -19,13 +20,11 @@
           <tr class="author-record">
 
             <td>{{$author->id}}</td>
-            {{-- <td><img class="author-index-icon" src="{{$author->avatar}}" alt="icona author"></td> --}}
+            <td><img class="author-index-icon" src="{{$author->details->avatar}}" alt="icona author"></td>
             <td>{{$author->name}}</td>
-
             <td>{{$author->email}}</td>
-            {{-- <td>{{$author->details->phone}}</td>
+            <td>{{$author->details->phone}}</td>
             <td>{{$author->details->address}}</td>
-            <td>{{$author->details->avatar}}</td> --}}
 
           </tr>
           @endforeach

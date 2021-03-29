@@ -21,4 +21,4 @@ Route::get('/', function () {
 Route::resource('/authors', 'AuthorController');
 
 
-Route::get('/posts', 'PostController@index')->name('authors.index');
+Route::get('/posts', 'PostController@index')->name('posts.index');
