@@ -13,7 +13,7 @@
   <head>
   <body>
     <div class="container-fluid">
-      <div class="container container-main">
+      <div class="container container-main bg-dark">
       <header>
 
           <div class="header-container">
@@ -21,8 +21,8 @@
 
 
             {{-- BOOTSTRAP NAVBAR --}}
-            <nav class="navbar navbar-expand-lg navbar-light">
-              <a class="navbar-brand" href={{route('authors.index')}}>BOOLPRESS</a>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+              <a class="navbar-brand" href={{route('welcome')}}>BOOLPRESS</a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>

@@ -20,7 +20,7 @@
           <tr class="author-record">
 
             <td>{{$author->id}}</td>
-            <td><img class="author-index-icon" src="{{$author->details->avatar}}" alt="icona author"></td>
+            <td><img class="author-index-icon rounded" src="{{$author->details->avatar}}" alt="icona author"></td>
             <td>{{$author->name}}</td>
             <td>{{$author->email}}</td>
             <td>{{$author->details->phone}}</td>
