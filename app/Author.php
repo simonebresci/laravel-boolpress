@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Author extends Model
 {
     public function details(){
-      return $this->hasOne('App\Author_detail');
+      return $this->hasOne('App\Authors_detail');
     }
 
     public function posts(){
