@@ -20,5 +20,4 @@ Route::get('/', function () {
 // CRUD AUTHORS
 Route::resource('/authors', 'AuthorController');
 
-
-Route::get('/posts', 'PostController@index')->name('posts.index');
+Route::resource('/posts', 'PostController');
