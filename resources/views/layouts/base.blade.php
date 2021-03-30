@@ -31,6 +31,7 @@
                   <a class="nav-item nav-link active" href={{route('authors.index')}}>Home <span class="sr-only">(current)</span></a>
                   <a class="nav-item nav-link" href={{route('authors.index')}}>Authors</a>
                   <a class="nav-item nav-link" href={{route('posts.index')}}>Posts</a>
+                  <a class="nav-item nav-link" href={{route('posts.create')}}>Create a new Post</a>
                   <a class="nav-item nav-link disabled" href="#"></a>
 
                 </div>

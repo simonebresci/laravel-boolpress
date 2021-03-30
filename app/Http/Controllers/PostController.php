@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Author;
+use App\Tag;
 
 class PostController extends Controller
 {
@@ -27,7 +28,8 @@ class PostController extends Controller
     public function create()
     {
         $authors = Author::all();
-        return view('posts.create',compact('authors'));
+        $tags = Tag::all();
+        return view('posts.create',compact('authors','tags'));
     }
 
     /**
@@ -44,7 +46,19 @@ class PostController extends Controller
         $post->body = $data['body'];
         $post->author_id = $data['author_id'];
         // $post->fill();
+
+        //Check if author_id exists
+        $author_id = $data['author_id'];
+        if(!Author::find($author_id)){
+          dd("Error on author_id" . $author_id);
+          // redirect su pagina di errore
+        }
+
+        // Save post
         $post->save();
+
+        // Save relations
+        $post->tags()->attach($data['tags']);
 
         // Redirect su index
         return redirect()->route('posts.index');

@@ -4,8 +4,6 @@
 @section('content')
     <h1>Posts</h1>
 
-      @dump($authors)
-
      <form action={{route('posts.store')}} method="post">
        @csrf
        @method('POST')
@@ -26,22 +24,20 @@
         <label for="author_id">Author</label>
         <select class="form-control" name="author_id" id="author_id">
           @foreach($authors as $author)
-            <option value="{{$author->id}}">{{$author->id}}{{$author->name}}</option>
+            <option value="{{$author->id}}">{{$author->name}}</option>
           @endforeach
         </select>
       </div>
 
       {{-- Tags --}}
-      {{-- <div class="form-group">
-      <label for="exampleFormControlSelect2">Example multiple select</label>
-      <select multiple class="form-control" id="exampleFormControlSelect2">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+      <div class="form-group">
+      <label for="tags[]">Tags</label>
+      <select multiple class="form-control" name="tags[]" id="tags">
+        @foreach($tags as $tag)
+          <option value="{{$tag->id}}">{{$tag->name}}</option>
+        @endforeach
       </select>
-      </div> --}}
+      </div>
 
       <button type="submit" class="btn btn-primary">Create</button>
 

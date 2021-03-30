@@ -11,6 +11,7 @@
             <th scope="col">Body</th>
             <th scope="col">Author_id</th>
             <th scope="col">Author</th>
+            <th scope="col">Tags</th>
 
           </tr>
         </thead>
@@ -23,6 +24,10 @@
             <td>{{$post->body}}</td>
             <td>{{$post->author_id}}</td>
             <td>{{$post->author->name}}</td>
+            <td>
+              @foreach ($post->tags as $tag)
+                {{$tag->name}},
+              @endforeach
           </tr>
           @endforeach
 
