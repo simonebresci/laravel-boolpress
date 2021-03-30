@@ -39,8 +39,9 @@ class AuthorSeeder extends Seeder
           $post->body=  $faker->text(320);
           // Salva quanto creato dentro author
           //, utilizzando il metodo posts definito in Model
+          $author->posts()->save($post);
 
-          // // Create random comments
+          // Create random comments
           // for($z=0; $z<rand(2,5); $z++){
           //   $comment = new Comment();
           //   $comment->body = $faker->text(160);
@@ -49,7 +50,7 @@ class AuthorSeeder extends Seeder
           //   $author->comments()->save($comment);
           // }
 
-          $author->posts()->save($post);
+
         }
       }
     }
