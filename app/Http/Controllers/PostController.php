@@ -66,8 +66,10 @@ class PostController extends Controller
         // Save relations
         $post->tags()->attach($data['tags']);
 
+        $storedPost= Post::orderBy('id','desc')->first();
+        
         //Send email when post saved
-        Mail::to('fakeuser@ciao.it')->send(new PostCreated($post));
+        Mail::to('fakeuser@ciao.it')->send(new PostCreated($storedPost, $storedPost->tags));
         // Redirect su index
         return redirect()->route('posts.index');
     }

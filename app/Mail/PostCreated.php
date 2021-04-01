@@ -6,12 +6,14 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Database\Eloquent\Collection;
 use App\Post;
 
 class PostCreated extends Mailable
 {
     use Queueable, SerializesModels;
     protected $post = null;
+    protected $tags = [];
 
     /**
      * Create a new message instance.
@@ -19,9 +21,10 @@ class PostCreated extends Mailable
      * @return void
      */
      // Dipendence injection
-    public function __construct(Post $post)
+    public function __construct(Post $post, Collection  $tags)
     {
         $this->post = $post;
+        $this->tags = $tags;
     }
 
     /**
@@ -32,7 +35,10 @@ class PostCreated extends Mailable
     public function build()
     {
         $post = $this->post;
-        return $this->view('mail.example',compact('post'));
+        $tags = $this->tags;
+        // return $this->view('mail.example',compact('post','tags'));
+        return $this->markdown('mail.tags-used', compact('post','tags'));
+
 
     }
 }
