@@ -4,9 +4,15 @@
 @section('content')
     <h1>Posts</h1>
 
-     <form action={{route('posts.store')}} method="post">
+    {{-- Inserimento immagini --}}
+
+
+
+     <form action={{route('posts.store')}} method="post" enctype="multipart/form-data">
        @csrf
        @method('POST')
+       {{-- Immagine --}}
+       <input type="file" name="picture" class="form-control" id="picture">
       {{-- Title --}}
       <div class="form-group">
       <label for="title">Title</label>
