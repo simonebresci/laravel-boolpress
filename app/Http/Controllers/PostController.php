@@ -48,10 +48,10 @@ class PostController extends Controller
         $post->body = $data['body'];
         $post->author_id = $data['author_id'];
         // $post->fill();
-        
+
         // Salva file Immagine ed in path salva il nome del file
         $path = $request->file('picture')->store('images');
-
+        $post->picture = $path;
 
         //Check if author_id exists
         $author_id = $data['author_id'];

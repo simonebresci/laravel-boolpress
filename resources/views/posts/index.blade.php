@@ -8,6 +8,7 @@
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Title</th>
+            <th scope="col">Picture</th>
             <th scope="col">Body</th>
             <th scope="col">Author_id</th>
             <th scope="col">Author</th>
@@ -21,6 +22,7 @@
 
             <td>{{$post->id}}</td>
             <td>{{$post->title}}</td>
+            <td><img class="post-picture rounded" src="{{asset($post->picture)}}" alt="picture del post"></td>
             <td>{{$post->body}}</td>
             <td>{{$post->author_id}}</td>
             <td>{{$post->author->name}}</td>
