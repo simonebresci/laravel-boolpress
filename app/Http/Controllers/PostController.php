@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Author;
 use App\Tag;
+use App\Mail\Postcreated;
+use Illuminate\Support\Facades\Mail;
 
 class PostController extends Controller
 {
@@ -60,6 +62,8 @@ class PostController extends Controller
         // Save relations
         $post->tags()->attach($data['tags']);
 
+        //Send email when post saved
+        Mail::to('fakeuser@ciao.it')->send(new PostCreated($post));
         // Redirect su index
         return redirect()->route('posts.index');
     }
